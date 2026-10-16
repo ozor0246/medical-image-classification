@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Datasets (several GB, never commit these)
+/data/
+
+# Secrets
+.env
+kaggle.json
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
