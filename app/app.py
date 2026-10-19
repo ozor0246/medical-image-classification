@@ -16,6 +16,8 @@ st.warning(
     "and is not a medical diagnostic device. Predictions should not be used to make clinical decisions."
 )
 
+st.caption("Do not upload real patient data or images that could identify a person.")
+
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD = [0.229, 0.224, 0.225]
 FINAL_TEMPERATURE = 1.0842  
