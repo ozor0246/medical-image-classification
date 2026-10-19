@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 from torchvision.models import densenet121
 from PIL import Image
+from pathlib import Path
 
 st.title("Chest X-Ray Pneumonia Classification")
 st.write("Upload a chest X-ray image to get a prediction.")
@@ -17,7 +18,8 @@ st.warning(
 
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD = [0.229, 0.224, 0.225]
-FINAL_TEMPERATURE = 1.0842  # from calibration in Phase 11
+FINAL_TEMPERATURE = 1.0842  
+MODEL_PATH = Path(__file__).resolve().parent.parent / 'models' / 'densenet121_weighted_bestf1.pt'
 
 
 def build_densenet121():
@@ -30,7 +32,7 @@ def build_densenet121():
 def load_model():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = build_densenet121().to(device)
-    model.load_state_dict(torch.load('models/densenet121_weighted_bestf1.pt', map_location=device))
+    model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
     model.eval()
     return model, device
 
