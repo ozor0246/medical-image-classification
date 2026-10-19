@@ -1,4 +1,5 @@
 # Chest X-Ray Pneumonia Classification
+**Live demo:** https://ozor-medical-image-classification.streamlit.app/
 
 Transfer-learning pipeline (DenseNet121) that classifies chest X-rays as pneumonia vs. not pneumonia, with Grad-CAM explanations and a Streamlit demo app.
 
@@ -73,7 +74,7 @@ All numbers below are on the **validation set** (4,003 images, 902 positives), t
 
 Upload a JPG, PNG or DICOM file, click **Analyze Image**, and the app shows the prediction, a calibrated confidence, and the original image, Grad-CAM heatmap and overlay. Predictions with probability between 35% and 65% are flagged as inconclusive.
 
-**Live demo:** not deployed yet. Deployment is the next step of this project (planned: Hugging Face Spaces or Streamlit Community Cloud, both of which can host a Streamlit app from this repo).
+**Live demo:** https://ozor-medical-image-classification.streamlit.app/
 
 ## Installation
 
